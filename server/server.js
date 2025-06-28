@@ -15,7 +15,7 @@ connectDB();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: [ 'http://localhost:5173', 'https://jwt-login-dmh5figi0-sahil-arts-projects.vercel.app' ],
+    origin: ['https://jwt-login-pi.vercel.app', 'http://localhost:5173', 'https://jwt-login-dmh5figi0-sahil-arts-projects.vercel.app'],
     credentials: true
 }))
 
