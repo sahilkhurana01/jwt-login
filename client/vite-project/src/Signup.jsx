@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import imageLogo from './assets/image.png';
+import { buildApiUrl } from './config';
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -45,7 +46,7 @@ const Signup = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/register`, {
+            const response = await fetch(buildApiUrl('/api/auth/register'), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

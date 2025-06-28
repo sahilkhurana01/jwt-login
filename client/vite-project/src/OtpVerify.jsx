@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import imageLogo from './assets/image.png';
+import { buildApiUrl } from './config';
 
 const OtpVerify = () => {
     const navigate = useNavigate();
@@ -58,7 +59,7 @@ const OtpVerify = () => {
         setError('');
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/verify-reset-otp`, {
+            const response = await fetch(buildApiUrl('/api/auth/verify-reset-otp'), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -94,7 +95,7 @@ const OtpVerify = () => {
         setError('');
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/send-reset-otp`, {
+            const response = await fetch(buildApiUrl('/api/auth/send-reset-otp'), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

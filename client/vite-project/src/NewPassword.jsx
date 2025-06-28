@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
 import imageLogo from './assets/image.png';
+import { buildApiUrl } from './config';
 
 const NewPassword = () => {
     const navigate = useNavigate();
@@ -45,7 +46,7 @@ const NewPassword = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/reset-password`, {
+            const response = await fetch(buildApiUrl('/api/auth/reset-password'), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

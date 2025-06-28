@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import imageLogo from './assets/image.png';
+import { buildApiUrl } from './config';
 
 const ResetPassword = () => {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ const ResetPassword = () => {
         setSuccess('');
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/send-reset-otp`, {
+            const response = await fetch(buildApiUrl('/api/auth/send-reset-otp'), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
