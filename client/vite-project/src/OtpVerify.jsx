@@ -58,7 +58,7 @@ const OtpVerify = () => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:4000/api/auth/verify-reset-otp', {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/verify-reset-otp`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ const OtpVerify = () => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:4000/api/auth/send-reset-otp', {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/send-reset-otp`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
